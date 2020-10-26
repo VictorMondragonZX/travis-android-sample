@@ -1,25 +1,35 @@
-sudo: required
 language: android
-dist: trusty
+sudo: required
+jdk: oraclejdk8
 
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
 
 before_install:
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - ./gradlew clean
   - chmod +x gradlew
+  - ./gradlew dependencies || true
+  - gem install bundler
+  - bundle install
 
 android:
   components:
+    - build-tools-29.0.0
+    - android-29
     - tools
-    - platform-tools
-    - build-tools-30.0.2
-    - android-30
+    - extra
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-
   licenses:
-    - 'android-sdk-preview-license-52d11cd2'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
 
 script:
   - ./gradlew build
