@@ -13,9 +13,6 @@ before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
   - ./gradlew clean
   - chmod +x gradlew
-  - ./gradlew dependencies || true
-  - gem install bundler
-  - bundle install
 
 android:
   components:
