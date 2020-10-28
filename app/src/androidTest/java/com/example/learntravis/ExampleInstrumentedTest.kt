@@ -18,7 +18,7 @@ import org.junit.Rule
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
-
+    
     @Test
     fun useAppContext() {
         // Context of the app under test.
