@@ -6,10 +6,9 @@ android:
   components:
     - platform-tools
     - tools
-    - build-tools-30.0.2
-    - android-16
-    - android-30
-    - sys-img-armeabi-v7a-android-22
+    - build-tools-26.0.2
+    - android-19
+    - android-26
     - extra-android-m2repository
 
   licenses:
